@@ -15,4 +15,4 @@ _, img_encoded = cv2.imencode('.jpg', img)
 # send http request with image and receive response
 response = requests.post(test_url, data=img_encoded.tostring(), headers=headers)
 # decode response
-print(json.loads(response.text))
+print(response.text) # JPEG binary content ! Write to a file as "name.jpg"
